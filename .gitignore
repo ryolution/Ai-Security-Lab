@@ -1,0 +1,26 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+.env
+.env.*
+!.env.example
+
+.external-labs/
+.local-labs/
+.tmp-lab-logs/
+
+# Private research and unfinished writing.
+blog-drafts/
+research-notes/
+private-notes/
+*.local.md
+*.private.md
+*.evidence.local.md
+
+# Large raw captures. Keep small demo GIFs in each vulnerability folder, or link
+# to hosted videos from the demo README files.
+*.mp4
+*.mov
+*.webm
