@@ -1,0 +1,20 @@
+id: standard
+description: Default scan profile for routine validation of authorized targets.
+
+categories:
+  - prompt-injection
+  - information-disclosure
+  - rag
+  - agents
+  - mcp
+
+execution:
+  parallelism: 2
+  timeout_seconds: 60
+  destructive_tests: false
+  network_required: false
+
+limits:
+  max_cases_per_vulnerability: 5
+  max_total_cases: 100
+  max_retries: 1

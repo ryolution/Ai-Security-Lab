@@ -1,0 +1,35 @@
+id: rag-api-example
+type: rag-http
+description: Example retrieval-augmented generation HTTP target.
+
+authorization:
+  confirmed: false
+  note: "Confirm authorization before scanning this endpoint."
+
+connection:
+  endpoint: "https://rag.example.com/query"
+  method: POST
+  api_key_env: "RAG_API_KEY"
+  timeout_seconds: 30
+
+request_template:
+  json:
+    question: "{{ prompt }}"
+    context: "{{ context }}"
+
+response_mapping:
+  text_path: "answer"
+  citations_path: "citations"
+
+capabilities:
+  - chat
+  - external_context
+  - retrieval
+
+limits:
+  max_requests: 20
+  max_tokens: 3000
+  max_runtime_seconds: 90
+
+redaction:
+  enabled: true

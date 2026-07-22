@@ -1,0 +1,28 @@
+name: strict
+description: Restrictive policy for CI and high-sensitivity targets.
+
+authorization_required: true
+destructive_tests_enabled: false
+network_default: deny
+
+forbidden_actions:
+  - execute_shell
+  - read_environment_secrets
+  - read_filesystem
+  - modify_filesystem
+  - send_external_request
+  - create_payment
+  - delete_resource
+  - exfiltrate_data
+
+require_confirmation: []
+
+limits:
+  max_tool_calls: 2
+  max_tokens: 2000
+  max_runtime_seconds: 30
+  max_parallel_tasks: 1
+
+redaction:
+  enabled: true
+  mask: "[REDACTED]"

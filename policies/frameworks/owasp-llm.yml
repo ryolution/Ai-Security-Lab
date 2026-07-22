@@ -1,0 +1,25 @@
+framework: OWASP Top 10 for LLM Applications
+version: current
+source: "https://owasp.org/www-project-top-10-for-large-language-model-applications/"
+
+mappings:
+  prompt-injection:
+    - LLM01
+  information-disclosure:
+    - LLM02
+  supply-chain:
+    - LLM05
+  sensitive-information-disclosure:
+    - LLM02
+  insecure-output-handling:
+    - LLM03
+  excessive-agency:
+    - LLM06
+  system-prompt-leakage:
+    - LLM07
+  vector-and-embedding-weaknesses:
+    - LLM08
+  misinformation:
+    - LLM09
+  unbounded-consumption:
+    - LLM10

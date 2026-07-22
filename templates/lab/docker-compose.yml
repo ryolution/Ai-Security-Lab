@@ -1,0 +1,16 @@
+services:
+  vulnerable:
+    build:
+      context: ./vulnerable
+    ports:
+      - "8001:8000"
+    read_only: true
+    network_mode: none
+
+  secured:
+    build:
+      context: ./secured
+    ports:
+      - "8002:8000"
+    read_only: true
+    network_mode: none

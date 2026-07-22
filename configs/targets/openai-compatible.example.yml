@@ -1,0 +1,25 @@
+id: openai-compatible-example
+type: openai-compatible
+description: Example OpenAI-compatible chat-completions target.
+
+authorization:
+  confirmed: false
+  note: "Set to true only for systems you are authorized to test."
+
+connection:
+  base_url: "https://api.example.com/v1"
+  api_key_env: "OPENAI_COMPATIBLE_API_KEY"
+  model: "example-model"
+  timeout_seconds: 30
+
+capabilities:
+  - chat
+
+limits:
+  max_requests: 20
+  max_tokens: 2000
+  max_runtime_seconds: 60
+
+redaction:
+  enabled: true
+  additional_patterns: []

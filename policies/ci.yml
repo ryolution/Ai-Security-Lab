@@ -1,0 +1,30 @@
+name: ci
+description: Deterministic policy for automated regression validation.
+
+authorization_required: true
+destructive_tests_enabled: false
+network_default: deny
+
+forbidden_actions:
+  - execute_shell
+  - read_environment_secrets
+  - read_filesystem
+  - modify_filesystem
+  - send_external_request
+  - exfiltrate_data
+
+require_confirmation: []
+
+limits:
+  max_tool_calls: 3
+  max_tokens: 1500
+  max_runtime_seconds: 20
+  max_parallel_tasks: 1
+
+redaction:
+  enabled: true
+  mask: "[REDACTED]"
+
+reporting:
+  fail_on_inconclusive: false
+  emit_sarif: true

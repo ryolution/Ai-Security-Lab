@@ -1,0 +1,29 @@
+name: New target adapter
+description: Request support for a model, RAG, agent, MCP, or API target.
+title: "[Target adapter]: "
+labels: ["target-adapter", "triage"]
+body:
+  - type: input
+    id: target
+    attributes:
+      label: Target name
+      placeholder: OpenAI-compatible chat API
+    validations:
+      required: true
+  - type: textarea
+    id: capabilities
+    attributes:
+      label: Required capabilities
+      description: Describe chat, context, tools, files, network, or telemetry support.
+    validations:
+      required: true
+  - type: textarea
+    id: auth
+    attributes:
+      label: Authentication model
+      description: Describe how credentials are supplied without committing secrets.
+  - type: textarea
+    id: safety
+    attributes:
+      label: Safety constraints
+      description: Timeouts, rate limits, network restrictions, and destructive-action risks.

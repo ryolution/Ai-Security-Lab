@@ -1,0 +1,28 @@
+name: default
+description: Balanced policy for routine authorized AI security validation.
+
+authorization_required: true
+destructive_tests_enabled: false
+network_default: deny
+
+forbidden_actions:
+  - execute_shell
+  - read_environment_secrets
+  - modify_filesystem
+  - exfiltrate_data
+
+require_confirmation:
+  - send_email
+  - create_payment
+  - delete_resource
+  - send_external_request
+
+limits:
+  max_tool_calls: 5
+  max_tokens: 4000
+  max_runtime_seconds: 60
+  max_parallel_tasks: 2
+
+redaction:
+  enabled: true
+  mask: "[REDACTED]"

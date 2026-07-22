@@ -1,0 +1,22 @@
+services:
+  scanner:
+    build:
+      context: ..
+      dockerfile: docker/scanner.Dockerfile
+    image: ai-security-lab/scanner:local
+    working_dir: /workspace
+    volumes:
+      - ..:/workspace:ro
+      - ./out:/out
+    environment:
+      AISEC_REPORT_DIR: /out
+
+  sandbox:
+    build:
+      context: ..
+      dockerfile: docker/sandbox.Dockerfile
+    image: ai-security-lab/sandbox:local
+    network_mode: none
+    read_only: true
+    mem_limit: 512m
+    pids_limit: 128

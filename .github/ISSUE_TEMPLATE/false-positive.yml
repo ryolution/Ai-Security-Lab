@@ -1,0 +1,31 @@
+name: False positive
+description: Report a finding that appears incorrectly classified.
+title: "[False positive]: "
+labels: ["false-positive", "triage"]
+body:
+  - type: input
+    id: vulnerability
+    attributes:
+      label: Vulnerability ID
+      placeholder: AIV-0001
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Finding evidence
+      description: Paste redacted evidence, detector output, and status.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+      description: Explain why the finding should be PASS, INCONCLUSIVE, or SKIPPED.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Framework version, target type, policy, and scan profile.

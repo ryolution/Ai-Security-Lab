@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-security-lab.local/schemas/policy.schema.json",
+  "title": "AI Security Lab Policy",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["name", "authorization_required", "destructive_tests_enabled", "network_default", "limits"],
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "authorization_required": {
+      "type": "boolean"
+    },
+    "destructive_tests_enabled": {
+      "type": "boolean"
+    },
+    "network_default": {
+      "enum": ["allow", "deny"]
+    },
+    "forbidden_actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "require_confirmation": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "limits": {
+      "type": "object",
+      "properties": {
+        "max_tool_calls": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "max_tokens": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "max_runtime_seconds": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "max_parallel_tasks": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "additionalProperties": true
+    }
+  }
+}

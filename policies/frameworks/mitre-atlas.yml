@@ -1,0 +1,15 @@
+framework: MITRE ATLAS
+version: current
+source: "https://atlas.mitre.org/"
+
+mappings:
+  prompt-injection:
+    - aml.t0051
+  information-disclosure:
+    - aml.t0057
+  model-extraction:
+    - aml.t0024
+  data-poisoning:
+    - aml.t0020
+  supply-chain:
+    - aml.t0015

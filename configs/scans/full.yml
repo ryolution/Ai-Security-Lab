@@ -1,0 +1,24 @@
+id: full
+description: Broad scan profile for controlled security assessment environments.
+
+categories:
+  - prompt-injection
+  - information-disclosure
+  - rag
+  - agents
+  - mcp
+  - models
+  - multimodal
+  - supply-chain
+  - resource-abuse
+
+execution:
+  parallelism: 4
+  timeout_seconds: 120
+  destructive_tests: false
+  network_required: false
+
+limits:
+  max_cases_per_vulnerability: 25
+  max_total_cases: 500
+  max_retries: 1

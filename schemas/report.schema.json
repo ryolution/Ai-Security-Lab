@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-security-lab.local/schemas/report.schema.json",
+  "title": "AI Security Lab Report",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["framework", "target", "started_at", "finished_at", "results"],
+  "properties": {
+    "framework": {
+      "type": "object",
+      "required": ["name", "version"],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "target": {
+      "type": "object",
+      "required": ["id", "type"],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "policy": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "started_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "finished_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["vulnerability_id", "test_id", "target_id", "status", "confidence", "summary"],
+        "properties": {
+          "vulnerability_id": {
+            "type": "string"
+          },
+          "test_id": {
+            "type": "string"
+          },
+          "target_id": {
+            "type": "string"
+          },
+          "status": {
+            "enum": ["PASS", "FAIL", "INCONCLUSIVE", "ERROR", "SKIPPED"]
+          },
+          "score": {
+            "type": ["number", "null"]
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "summary": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "object"
+          },
+          "error": {
+            "type": ["string", "null"]
+          }
+        }
+      }
+    }
+  }
+}

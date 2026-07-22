@@ -1,0 +1,17 @@
+id: quick
+description: Small, safe smoke scan for local development and pull requests.
+
+categories:
+  - prompt-injection
+  - information-disclosure
+
+execution:
+  parallelism: 1
+  timeout_seconds: 30
+  destructive_tests: false
+  network_required: false
+
+limits:
+  max_cases_per_vulnerability: 1
+  max_total_cases: 10
+  max_retries: 0

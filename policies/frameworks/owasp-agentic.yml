@@ -1,0 +1,16 @@
+framework: OWASP Agentic AI
+version: draft
+source: "https://owasp.org/"
+
+mappings:
+  agents:
+    - excessive-agency
+    - tool-misuse
+    - missing-human-approval
+  mcp:
+    - tool-description-poisoning
+    - capability-escalation
+    - unsafe-resource-access
+  prompt-injection:
+    - instruction-hierarchy-bypass
+    - indirect-instruction-injection
